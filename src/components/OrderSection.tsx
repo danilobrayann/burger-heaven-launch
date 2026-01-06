@@ -21,7 +21,7 @@ const OrderSection = ({ cart, setCart }: OrderSectionProps) => {
     setCart(prev => {
       const item = prev.find(i => i.id === itemId);
       if (!item) return prev;
-      
+
       const newQuantity = item.quantity + change;
       if (newQuantity <= 0) {
         return prev.filter(i => i.id !== itemId);
@@ -70,24 +70,24 @@ const OrderSection = ({ cart, setCart }: OrderSectionProps) => {
     message += `📍 *Endereço:* ${address}\n\n`;
     message += `📋 *ITENS DO PEDIDO:*\n`;
     message += `${'─'.repeat(25)}\n`;
-    
+
     cart.forEach(item => {
       const itemTotal = item.price * item.quantity;
       message += `\n• *${item.name}*\n`;
       message += `  Qtd: ${item.quantity} x R$ ${item.price.toFixed(2).replace('.', ',')} = R$ ${itemTotal.toFixed(2).replace('.', ',')}\n`;
     });
-    
+
     message += `\n${'─'.repeat(25)}\n`;
     message += `💰 *TOTAL: R$ ${totalPrice.toFixed(2).replace('.', ',')}*\n`;
-    
+
     if (observations.trim()) {
       message += `\n📝 *Observações:* ${observations}\n`;
     }
-    
+
     message += `\n⏰ Aguardo confirmação do pedido!`;
 
     // WhatsApp number (replace with actual number)
-    const whatsappNumber = "5511999999999";
+    const whatsappNumber = "5571996738280";
     const encodedMessage = encodeURIComponent(message);
     const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
 
@@ -134,12 +134,12 @@ const OrderSection = ({ cart, setCart }: OrderSectionProps) => {
             ) : (
               <div className="space-y-3 sm:space-y-4 max-h-[350px] sm:max-h-[400px] overflow-y-auto pr-2">
                 {cart.map(item => (
-                  <div 
-                    key={item.id} 
+                  <div
+                    key={item.id}
                     className="flex items-center gap-3 sm:gap-4 bg-background/50 rounded-xl p-3 sm:p-4"
                   >
-                    <img 
-                      src={item.image} 
+                    <img
+                      src={item.image}
                       alt={item.name}
                       className="w-14 h-14 sm:w-16 sm:h-16 rounded-lg object-cover flex-shrink-0"
                     />
@@ -150,7 +150,7 @@ const OrderSection = ({ cart, setCart }: OrderSectionProps) => {
                       </p>
                     </div>
                     <div className="flex items-center gap-2">
-                      <button 
+                      <button
                         onClick={() => updateQuantity(item.id, -1)}
                         className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-muted flex items-center justify-center hover:bg-accent transition-colors"
                       >
@@ -159,13 +159,13 @@ const OrderSection = ({ cart, setCart }: OrderSectionProps) => {
                       <span className="font-bold text-foreground min-w-[20px] text-center text-sm sm:text-base">
                         {item.quantity}
                       </span>
-                      <button 
+                      <button
                         onClick={() => updateQuantity(item.id, 1)}
                         className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-primary flex items-center justify-center hover:bg-primary/80 transition-colors"
                       >
                         <Plus className="w-3 h-3 sm:w-4 sm:h-4 text-primary-foreground" />
                       </button>
-                      <button 
+                      <button
                         onClick={() => removeItem(item.id)}
                         className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-destructive/20 flex items-center justify-center hover:bg-destructive transition-colors ml-1 sm:ml-2"
                       >
@@ -201,7 +201,7 @@ const OrderSection = ({ cart, setCart }: OrderSectionProps) => {
                 <label className="block text-sm font-medium text-foreground mb-2">
                   Seu Nome *
                 </label>
-                <Input 
+                <Input
                   placeholder="Digite seu nome completo"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
@@ -213,7 +213,7 @@ const OrderSection = ({ cart, setCart }: OrderSectionProps) => {
                 <label className="block text-sm font-medium text-foreground mb-2">
                   Endereço de Entrega *
                 </label>
-                <Textarea 
+                <Textarea
                   placeholder="Rua, número, bairro, complemento..."
                   value={address}
                   onChange={(e) => setAddress(e.target.value)}
@@ -225,7 +225,7 @@ const OrderSection = ({ cart, setCart }: OrderSectionProps) => {
                 <label className="block text-sm font-medium text-foreground mb-2">
                   Observações (opcional)
                 </label>
-                <Textarea 
+                <Textarea
                   placeholder="Sem cebola, ponto da carne, troco para..."
                   value={observations}
                   onChange={(e) => setObservations(e.target.value)}
@@ -233,10 +233,10 @@ const OrderSection = ({ cart, setCart }: OrderSectionProps) => {
                 />
               </div>
 
-              <Button 
+              <Button
                 onClick={sendToWhatsApp}
-                variant="hero" 
-                size="xl" 
+                variant="hero"
+                size="xl"
                 className="w-full mt-2 sm:mt-4"
                 disabled={cart.length === 0}
               >
