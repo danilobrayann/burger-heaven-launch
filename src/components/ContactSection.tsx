@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 
 const ContactSection = () => {
   const openWhatsApp = () => {
-    const whatsappNumber = "5511999999999";
+    const whatsappNumber = "5571996738280";
     const message = encodeURIComponent("Olá! Gostaria de fazer uma reserva na Brasa Burger.");
     window.open(`https://wa.me/${whatsappNumber}?text=${message}`, '_blank');
   };
@@ -19,7 +19,7 @@ const ContactSection = () => {
             ONDE <span className="text-gradient">ESTAMOS</span>
           </h2>
         </div>
-        
+
         <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 items-center">
           {/* Info Cards */}
           <div className="space-y-4 sm:space-y-6">
@@ -35,7 +35,7 @@ const ContactSection = () => {
                 </p>
               </div>
             </div>
-            
+
             <div className="bg-gradient-card p-4 sm:p-6 rounded-2xl flex items-start gap-3 sm:gap-4 shadow-card">
               <div className="flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-primary/20 flex items-center justify-center">
                 <Clock className="w-5 h-5 sm:w-6 sm:h-6 text-primary" />
@@ -48,7 +48,7 @@ const ContactSection = () => {
                 </p>
               </div>
             </div>
-            
+
             <div className="bg-gradient-card p-4 sm:p-6 rounded-2xl flex items-start gap-3 sm:gap-4 shadow-card">
               <div className="flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-primary/20 flex items-center justify-center">
                 <Phone className="w-5 h-5 sm:w-6 sm:h-6 text-primary" />
@@ -56,27 +56,27 @@ const ContactSection = () => {
               <div>
                 <h3 className="font-display text-lg sm:text-xl text-foreground mb-1">Contato</h3>
                 <p className="text-muted-foreground text-sm sm:text-base">
-                  (11) 99999-9999<br />
+                  (71) 99673-8280<br />
                   contato@brasaburger.com.br
                 </p>
               </div>
             </div>
-            
-            <Button 
+
+            <Button
               onClick={openWhatsApp}
-              variant="hero" 
-              size="xl" 
+              variant="hero"
+              size="xl"
               className="w-full sm:w-auto"
             >
               <Phone className="w-5 h-5 mr-2" />
               Fazer Reserva
             </Button>
           </div>
-          
+
           {/* Map Placeholder */}
           <div className="relative h-[300px] sm:h-[400px] lg:h-[500px] rounded-2xl overflow-hidden shadow-card">
             <div className="absolute inset-0 bg-gradient-card flex items-center justify-center">
-              <a 
+              <a
                 href="https://maps.google.com/?q=Rua+dos+Sabores+123+São+Paulo+SP"
                 target="_blank"
                 rel="noopener noreferrer"

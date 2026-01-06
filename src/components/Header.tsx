@@ -11,7 +11,7 @@ const Header = () => {
         <a href="#" className="font-display text-2xl sm:text-3xl text-primary tracking-wider">
           BRASA BURGER
         </a>
-        
+
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center gap-8">
           <a href="#menu" className="text-foreground/80 hover:text-primary transition-colors font-medium">
@@ -32,15 +32,15 @@ const Header = () => {
         </nav>
 
         <div className="flex items-center gap-4">
-          <a href="tel:+5511999999999" className="hidden sm:flex items-center gap-2 text-primary font-semibold">
+          <a href="tel:+5571996738280" className="hidden sm:flex items-center gap-2 text-primary font-semibold">
             <Phone className="w-4 h-4" />
-            (11) 99999-9999
+            (71) 99673-8280
           </a>
-          
+
           {/* Mobile Menu Button */}
-          <Button 
-            variant="ghost" 
-            size="icon" 
+          <Button
+            variant="ghost"
+            size="icon"
             className="md:hidden"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
@@ -53,36 +53,36 @@ const Header = () => {
       {isMenuOpen && (
         <div className="md:hidden bg-background/95 backdrop-blur-md border-t border-border/50 animate-fade-in">
           <nav className="container mx-auto px-4 py-6 flex flex-col gap-4">
-            <a 
-              href="#menu" 
+            <a
+              href="#menu"
               className="text-foreground/80 hover:text-primary transition-colors font-medium py-2"
               onClick={() => setIsMenuOpen(false)}
             >
               Cardápio
             </a>
-            <a 
-              href="#galeria" 
+            <a
+              href="#galeria"
               className="text-foreground/80 hover:text-primary transition-colors font-medium py-2"
               onClick={() => setIsMenuOpen(false)}
             >
               Galeria
             </a>
-            <a 
-              href="#about" 
+            <a
+              href="#about"
               className="text-foreground/80 hover:text-primary transition-colors font-medium py-2"
               onClick={() => setIsMenuOpen(false)}
             >
               Sobre
             </a>
-            <a 
-              href="#pedido" 
+            <a
+              href="#pedido"
               className="text-foreground/80 hover:text-primary transition-colors font-medium py-2"
               onClick={() => setIsMenuOpen(false)}
             >
               Pedido
             </a>
-            <a 
-              href="#contact" 
+            <a
+              href="#contact"
               className="text-foreground/80 hover:text-primary transition-colors font-medium py-2"
               onClick={() => setIsMenuOpen(false)}
             >
